@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather & Dispatch System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Weather & Dispatch Management System</h1>
+    </header>
+
+    <main>
+        <!-- Weather Section -->
+        <div class="weather-container">
+            <h2>Weather Checker</h2>
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Enter city name">
+                <button onclick="getWeatherForCity()">Get Weather</button>
+            </div>
+            <div id="weather-display"></div>
+            <div id="dispatch-alert"></div>
+        </div>
+
+        <!-- Dispatch Management System -->
+        <div class="dispatch-management-system">
+            <h2>Dispatch Management System</h2>
+            
+            <!-- Status Dashboard -->
+            <div class="status-dashboard">
+                <div class="current-status">
+                    <h3>Current Status</h3>
+                    <div id="statusIndicator" class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span id="statusText">Checking status...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Section -->
+            <div class="customer-section">
+                <h3>Customer Portal</h3>
+                <div class="customer-info">
+                    <p><strong>Address:</strong> 7721 111th pl SE, Newcastle, Washington 98056</p>
+                    <button id="customerRequestBtn" class="request-btn">Request Service</button>
+                </div>
+            </div>
+
+            <!-- Team Section -->
+            <div class="team-section">
+                <h3>Team Management</h3>
+                <div class="team-members">
+                    <select id="teamMemberSelect">
+                        <option value="">Select Team Member</option>
+                        <option value="team1">John Doe (Available)</option>
+                        <option value="team2">Jane Smith (Available)</option>
+                        <option value="team3">Mike Johnson (Available)</option>
+                    </select>
+                    <div class="eta-control">
+                        <label for="etaTime">Estimated Arrival:</label>
+                        <input type="time" id="etaTime">
+                    </div>
+                </div>
+                <div class="service-status">
+                    <button id="startServiceBtn" class="service-btn" disabled>Start Service</button>
+                    <button id="completeServiceBtn" class="service-btn" disabled>Complete Service</button>
+                </div>
+            </div>
+
+            <!-- Dispatch Controls -->
+            <div class="dispatch-controls">
+                <h3>Dispatch Controls</h3>
+                <div class="control-buttons">
+                    <button id="manualDispatchBtn" class="dispatch-btn">Manual Dispatch</button>
+                    <button id="cancelDispatchBtn" class="cancel-btn" disabled>Cancel Dispatch</button>
+                </div>
+            </div>
+
+            <!-- Dispatch Log -->
+            <div class="dispatch-log">
+                <h3>Dispatch Log</h3>
+                <div id="dispatchHistory" class="log-entries">
+                    <!-- Log entries will be added here dynamically -->
+                </div>
+            </div>
+
+            <!-- Notifications Section -->
+            <div class="notifications-section">
+                <h3>Notification Settings</h3>
+                <div class="notification-options">
+                    <div class="email-notifications">
+                        <div class="email-input-group">
+                            <input type="checkbox" id="emailNotifications" checked>
+                            <label for="emailNotifications">Email Notifications</label>
+                            <input type="email" id="notificationEmail" placeholder="Enter email address">
+                            <button id="saveEmailBtn" class="save-btn">Save Email</button>
+                        </div>
+                        <span id="emailSaveStatus" class="save-status"></span>
+                    </div>
+                    <div class="saved-emails">
+                        <h4>Subscribed Emails:</h4>
+                        <ul id="emailList">
+                            <!-- Saved emails will appear here -->
+                        </ul>
+                    </div>
+                    <div class="weather-alerts">
+                        <h4>Weather Alert Conditions</h4>
+                        <div class="alert-options">
+                            <label><input type="checkbox" value="snow" checked> Snow</label>
+                            <label><input type="checkbox" value="ice"> Ice</label>
+                            <label><input type="checkbox" value="heavyRain"> Heavy Rain</label>
+                            <label><input type="checkbox" value="wind"> High Winds</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Weather & Dispatch System</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
